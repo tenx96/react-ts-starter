@@ -2,3 +2,5 @@ node_modules
 .vscode
 dist
 .eslintcache
+package-lock.json
+cypress/videos
