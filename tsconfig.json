@@ -11,6 +11,6 @@
     "esModuleInterop": true,
     "types": ["cypress"]
   },
-  "files": ["src/index.tsx"],
+  "files": ["src/bootstrap.tsx"],
   "include": ["**/*.ts"]
 }

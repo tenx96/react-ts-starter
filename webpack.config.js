@@ -1,12 +1,11 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 
 const path = require("path");
-
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
+const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const isProduction = process.env.NODE_ENV == "production";
-
+const deps = require("./package.json").dependencies
 const stylesHandler = MiniCssExtractPlugin.loader;
 
 const config = {
@@ -20,11 +19,34 @@ const config = {
     port : 5000
   },
   plugins: [
+    new ModuleFederationPlugin({
+      name: "home",
+      filename: "remoteEntry.js",
+      remotes: {
+       
+      },
+      exposes: {
+        
+      },
+      shared: {
+        ...deps,
+        react: {
+          singleton: true,
+          eager: true,
+          requiredVersion: deps.react,
+        },
+        "react-dom": {
+          eager : true,
+          singleton: true,
+          requiredVersion: deps["react-dom"],
+        },
+      },
+    }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "index.html"),
     }),
 
-    new MiniCssExtractPlugin(),
+    // new MiniCssExtractPlugin(),
 
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
