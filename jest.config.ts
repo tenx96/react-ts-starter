@@ -15,5 +15,8 @@ export default  {
   ],
   "setupFilesAfterEnv": [
     "<rootDir>/src/test/setupTests.ts"
-  ]
+  ],
+  "moduleNameMapper" : {
+    "@components/(.*)" : "<rootDir>/src/components/$1"
+  }
 };
