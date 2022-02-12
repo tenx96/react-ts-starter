@@ -12,6 +12,7 @@ const config = {
   entry: "./src/index.tsx",
   output: {
     path: path.resolve(__dirname, "dist"),
+    publicPath: "http://localhost:5000/",
   },
   devServer: {
     open: true,
@@ -26,17 +27,14 @@ const config = {
        
       },
       exposes: {
-        
+        "./button" : "./src/Button"
       },
       shared: {
-        ...deps,
         react: {
           singleton: true,
-          eager: true,
           requiredVersion: deps.react,
         },
         "react-dom": {
-          eager : true,
           singleton: true,
           requiredVersion: deps["react-dom"],
         },
@@ -46,7 +44,7 @@ const config = {
       template: path.join(__dirname, "src", "index.html"),
     }),
 
-    // new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin(),
 
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
