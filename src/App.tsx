@@ -1,11 +1,14 @@
 import React from "react";
 
-import Button from "./Button";
+import Button from "@components/Button";
+
 const App: React.FC = () => {
   return (
     <div>
       <div>hello world</div>
-      <Button />
+      <div>
+        <Button>Click me!</Button>
+      </div>
     </div>
   );
 };
