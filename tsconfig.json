@@ -2,8 +2,8 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": false,
-    "module": "es6",
-    "target": "es5",
+    "module": "esnext",
+    "target": "es6",
     "allowJs": true,
     "jsx" : "react",
     "moduleResolution": "node",
@@ -12,9 +12,14 @@
     "types": ["cypress"],
     "baseUrl": "./src",
     "paths": {
-      "@components/*" : ["components/*"]
+      "@components/*" : ["components/*"],
+      "@screens/*" : ["screens/*"],
+      "@wrappers/*" : ["wrappers/*"],
+      "@utils/*" : ["utils/*"],
+      "@apis/*" : ["apis/*"],
+      "@constants/*" : ["constants/*"],
     }
   },
   "files": ["src/index.tsx"],
-  "include": ["**/*.ts"]
+  "include": ["**/*.tsx", "**/*.ts"]
 }
