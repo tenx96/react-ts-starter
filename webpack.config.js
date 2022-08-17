@@ -12,13 +12,16 @@ const stylesHandler = MiniCssExtractPlugin.loader;
 const config = {
   entry: "./src/index.tsx",
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'index_bundle.js',
+    publicPath: '/'
   },
+  devtool: "source-map",
   devServer: {
-    open: true,
+    open: false,
     host: "localhost",
     port : 5000,
-     historyApiFallback : true
+    historyApiFallback : true
   },
   plugins: [
     new HtmlWebpackPlugin({
