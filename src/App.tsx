@@ -8,7 +8,7 @@ const App: React.FC = () => {
         path="/"
         element={
           <div>
-            Home page{" "}
+            hello world
             <ul>
               <li>
                 <Link to={"/about"}>about</Link>
