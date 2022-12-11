@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
 
+import Button from "@/components/Button";
+
 const App: React.FC = () => {
   return (
     <Routes>
@@ -8,7 +10,7 @@ const App: React.FC = () => {
         path="/"
         element={
           <div>
-            hello world
+            <Button>Hello</Button>
             <ul>
               <li>
                 <Link to={"/about"}>about</Link>

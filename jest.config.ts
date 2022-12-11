@@ -3,7 +3,11 @@ export default  {
   "transform": {
     "^.+\\.tsx?$": "ts-jest"
   },
-  "roots" : ["./src"],
+  "moduleDirectories": [
+    __dirname,
+    "src",
+    "node_modules"
+  ],
   "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
   "moduleFileExtensions": [
     "ts",
@@ -17,6 +21,6 @@ export default  {
     "<rootDir>/src/test/setupTests.ts"
   ],
   "moduleNameMapper" : {
-    "@components/(.*)" : "<rootDir>/src/components/$1"
+    "@/(.*)" : "<rootDir>/src/$1"
   }
 };
